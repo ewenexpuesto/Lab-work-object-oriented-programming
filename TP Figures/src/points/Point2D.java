@@ -66,7 +66,7 @@ public class Point2D
 	 */
 	public Point2D(Point2D p)
 	{
-		this(p.x, p.y);
+		this(p.x, p.y); /* Comme en C, une copie des paramètres est automatiquement effectuée dans la fonction, ici c'est Point2D(p.x, p.y) */
 	}
 
 	/**
@@ -171,7 +171,7 @@ public class Point2D
 	// dans une éventuelle Liste de points.
 	@Override
 	public String toString() {
-	return "x = " + x + ", y = " + y;
+		return "x = " + x + " y = " + y;
 	}
 	/**
 	 * Use case
@@ -180,11 +180,19 @@ public class Point2D
 	 */
 	protected boolean equals(Point2D p) {
 		return Math.abs(this.x - p.x) < epsilon && Math.abs(this.y - p.y) < epsilon;
-	}
+	} /* le test ne passe pas, c'est normal */
+
 	@Override
 	public boolean equals(Object obj) {
-	if (this == obj) return true; // Même instance
-	if (obj == null || getClass() != obj.getClass()) return false; // Pas un Point2D
-	return equals((Point2D) obj); // Appelle la version protégée
+		if (obj == null) {
+			return false;
+		}
+		if (this == obj) {
+			return true; // Même instance
+		}
+		if (this.getClass().equals(obj.getClass())) { // or != instead of .equals ; this.getClass() is similar to getClass()
+			return equals((Point2D) obj); // Appelle la version protégée
+		}
+		return false; // Should not happend
 	}
 }

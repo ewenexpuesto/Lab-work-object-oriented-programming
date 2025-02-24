@@ -1,4 +1,4 @@
 {
     "java.project.sourcePaths": ["src"],
-    "java.project.outputPath": "mybin"
+    "java.project.outputPath": "bin"
 }

@@ -83,7 +83,9 @@ public interface Figure
 	public default double distanceToCenter(Figure f)
 	{
 		// TODO Remplacer par l'implémentation ...
-		return 0.0;
+		Point2D center = f.getCenter();
+		Point2D center_current = getCenter();
+		return Point2D.distance(center,center_current);
 	}
 
 	/**
@@ -97,7 +99,9 @@ public interface Figure
 	public static double distanceToCenter(Figure f1, Figure f2)
 	{
 		// TODO Remplacer par l'implémentation ...
-		return 0.0;
+		Point2D center1 = f1.getCenter();
+		Point2D center2 = f2.getCenter();
+		return Point2D.distance(center1,center2);
 	}
 
 	/**

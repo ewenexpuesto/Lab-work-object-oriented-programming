@@ -30,7 +30,11 @@ public class Circle extends AbstractFigure
 	public Circle()
 	{
 		// super() est implicite
-		// TODO Compléter ...
+		// DONE Compléter ...
+		super(); // used to call a superclass constructor
+		this.center = new Point2D(); // allocates memory and creates a new instance
+		this.radius = 1;
+
 	}
 
 	/**
@@ -41,7 +45,9 @@ public class Circle extends AbstractFigure
 	 */
 	public Circle(double x, double y, double r)
 	{
-		// TODO Compléter ...
+		// DONE Compléter ...
+		this.center = new Point2D(x, y);
+		this.radius = r;
 	}
 
 	/**
@@ -51,7 +57,9 @@ public class Circle extends AbstractFigure
 	 */
 	public Circle(Point2D p, double r)
 	{
-		// TODO Compléter ...
+		// DONE Compléter ...
+		this.center = p;
+		this.radius = r;
 	}
 
 	/**
@@ -60,7 +68,8 @@ public class Circle extends AbstractFigure
 	 */
 	public Circle(Circle c)
 	{
-		// TODO Compléter ...
+		// DONE Compléter ...
+		this(c.center, c.radius);
 	}
 
 	// Accesseurs -----------------------------------------------------------
@@ -71,8 +80,8 @@ public class Circle extends AbstractFigure
 	@Override
 	public Point2D getCenter()
 	{
-		// TODO Remplacer par l'implémentation ...
-		return new Point2D(0.0, 0.0);
+		// DONE Remplacer par l'implémentation ...
+		return this.center;
 	}
 
 	/**
@@ -84,7 +93,7 @@ public class Circle extends AbstractFigure
 	public Point2D getBoundingBoxCenter()
 	{
 		// TODO Remplacer par l'implémentation ...
-		return new Point2D(0.0, 0.0);
+		return getCenter(); // does this really work ?
 	}
 
 	/**
@@ -121,7 +130,9 @@ public class Circle extends AbstractFigure
 	@Override
 	public Figure move(double dx, double dy)
 	{
-		// TODO Compléter ...
+		// DONE Compléter ...
+		Point2D center = this.getCenter(); // this est facultatif
+		center.move(dx, dy);
 		return this;
 	}
 
@@ -133,7 +144,7 @@ public class Circle extends AbstractFigure
 	@Override
 	public String toString()
 	{
-		return new String(/* TODO Compléter ... */);
+		return new String(/* TODO Compléter ... */"name : " + this.getCenter() + " , r = " + this.getRadius()); // the tests don't pass, check the grammar
 	}
 
 	/**
@@ -146,8 +157,14 @@ public class Circle extends AbstractFigure
 	@Override
 	public boolean contains(Point2D p)
 	{
-		// TODO Remplacer par l'implémentation
-		return false;
+		// DONE Remplacer par l'implémentation
+		double distance = Point2D.distance(this.getCenter(), p);
+		if (distance <= this.getRadius()) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	/**
@@ -157,8 +174,8 @@ public class Circle extends AbstractFigure
 	@Override
 	public double width()
 	{
-		// TODO Remplacer par l'implémentation
-		return 0.0;
+		// DONE Remplacer par l'implémentation
+		return 2 * this.getRadius();
 	}
 
 	/**
@@ -168,8 +185,8 @@ public class Circle extends AbstractFigure
 	@Override
 	public double height()
 	{
-		// TODO Remplacer par l'implémentation
-		return 0.0;
+		// DONE Remplacer par l'implémentation
+		return this.width(); // this est factultatif
 	}
 
 	/**
@@ -180,7 +197,7 @@ public class Circle extends AbstractFigure
 	public double area()
 	{
 		// TODO Remplacer par l'implémentation
-		return 0.0;
+		return 3.14 * (this.getRadius() * this.getRadius());
 	}
 
 	/**

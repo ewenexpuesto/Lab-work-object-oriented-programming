@@ -107,7 +107,20 @@ public abstract class AbstractFigure implements Figure
 	public boolean equals(Object obj)
 	{
 		// TODO Remplacer par l'implémentation utilisant la méthode ci-dessus...
-		return false;
+		/*
+		if (obj == null) {
+			return false;
+		}
+		*/
+		if (this == obj) {
+			return true; // Même instance
+		}
+		/*
+		if (this.getClass().equals(obj.getClass())) {
+			return equals((Figure) obj); // Appelle la version protected
+		}
+		*/
+		return false; // Should not happend
 	}
 
 	/**
