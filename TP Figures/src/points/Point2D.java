@@ -35,7 +35,7 @@ public class Point2D
 	 */
 
 	/**
-	 * TODO Constructeur valué
+	 * DONE Constructeur valué
 	 * @param x l’abscisse du point à créer
 	 * @param y l'ordonnée du point à créer
 	 */
@@ -47,7 +47,7 @@ public class Point2D
 	}
 
 	/**
-	 * TODO Constructeur par défaut. Initialise un point à l'origine du repère [0.0,
+	 * DONE Constructeur par défaut. Initialise un point à l'origine du repère [0.0,
 	 * 0.0]
 	 */
 	public Point2D()
@@ -58,7 +58,7 @@ public class Point2D
 	}
 
 	/**
-	 * TODO Constructeur de copie
+	 * DONE Constructeur de copie
 	 * @param p le point dont il faut copier les coordonnées Il s'agit ici d'une
 	 * copie profonde de manière à créer une nouvelle instance
 	 * possédant les même caractéristiques que celle dont on copie
@@ -79,7 +79,7 @@ public class Point2D
 	}
 
 	/*
-	 * TODO Accesseurs : Source > Generate Getters and Setters ...
+	 * DONE Accesseurs : Source > Generate Getters and Setters ...
 	 * 	- get[X|Y]
 	 * 	- set[X|Y]
 	 * 	- getEpsilon
@@ -122,7 +122,7 @@ public class Point2D
 	}
 
 	/**
-	 * TODO Calcul de la distance 2D entre deux points. Cette distance ne concerne
+	 * DONE Calcul de la distance 2D entre deux points. Cette distance ne concerne
 	 * pas plus un point que l'autre c'est pourquoi on en fait une méthode de
 	 * classe.
 	 * @param p1 le premier point
@@ -144,7 +144,7 @@ public class Point2D
 	 */
 
 	/**
-	 * TODO Calcul de distance 2D par rapport au point courant
+	 * DONE Calcul de distance 2D par rapport au point courant
 	 * @param p l'autre point dont on veut calculer la distance
 	 * @return la distance entre le point courant et le point p
 	 * @see #distance(Point2D, Point2D)
@@ -161,7 +161,7 @@ public class Point2D
 	 */
 
 	/*
-	 * TODO Affichage contenu et test d'égalité
+	 * DONE Affichage contenu et test d'égalité
 	 * 	- toString : "x = <value> y = <value>"
 	 * 	- equals avec Point2D (protected) puis avec Object (public)
 	 * 	- Source > Override/Implements Methods ...

@@ -45,6 +45,6 @@ public class Point3D extends Point2D {
     }
 
     protected boolean equals(Point3D p) {
-        return Math.abs(this.x - p.x) < epsilon && Math.abs(this.y - p.y) < epsilon && Math.abs(this.z - p.z) < epsilon;
+        return Math.abs(this.x - p.x) < getEpsilon() && Math.abs(this.y - p.y) < getEpsilon() && Math.abs(this.z - p.z) < getEpsilon();
     }
 }
