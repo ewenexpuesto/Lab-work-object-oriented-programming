@@ -47,4 +47,19 @@ public class Point3D extends Point2D {
     protected boolean equals(Point3D p) {
         return Math.abs(this.x - p.x) < getEpsilon() && Math.abs(this.y - p.y) < getEpsilon() && Math.abs(this.z - p.z) < getEpsilon();
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj == null){
+            return false;
+        }
+
+        if(obj == this){
+            return true;
+        }
+
+        if(obj instanceof Point3D){
+            Point3D p = (Point3D) obj;
+            return equals(p);
+        }
 }
